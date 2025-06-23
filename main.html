@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Reminder System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Medicine Reminder System</h1>
+        <form id="medicineForm">
+            <label for="numMedicinesInStock">Enter the number of medicines you have:</label>
+            <input type="number" id="numMedicinesInStock" required min="1" max="100" placeholder="Enter number of medicines">
+            
+            <label for="courseDuration">Enter the course duration (in days):</label>
+            <input type="number" id="courseDuration" required min="1" max="365" placeholder="Enter course duration in days">
+            
+            <button type="button" onclick="getMedicineDetails()">Submit</button>
+        </form>
+
+        <div id="medicineDetails" class="hidden">
+            <h2>Enter Medicine Details</h2>
+            <div id="medicines"></div>
+            <button type="button" onclick="checkStock()">Check Stock</button>
+        </div>
+
+        <div id="resultMessage" class="hidden">
+            <h2>Reminder</h2>
+            <p id="message"></p>
+            <button onclick="checkStock()">Okay</button>
+            <button onclick="endCourse()">End My Course</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
